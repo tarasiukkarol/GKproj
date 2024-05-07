@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk67gbl5vpcxn"]
+[gd_scene load_steps=4 format=3 uid="uid://dk67gbl5vpcxn"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_byfqx"]
 [ext_resource type="Texture2D" uid="uid://ckxwj4nt8ohex" path="res://scenes/entities/player/Dungeon Ruins Tileset/f4e8c28d-7f05-4184-9754-5cb9ab0df785.jpg" id="2_bfvt7"]
+[ext_resource type="PackedScene" uid="uid://crpucmfmyjkhx" path="res://scenes/options.tscn" id="3_lp4u3"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_byfqx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,17 +22,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_bfvt7")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-custom_minimum_size = Vector2(1000, 500)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.811765, 0.47451, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -101,6 +92,10 @@ theme_override_constants/margin_bottom = 20
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Options" parent="." instance=ExtResource("3_lp4u3")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Options" to="." method="_on_options_pressed"]
