@@ -10,10 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Precision Platformer"
-run/main_scene="res://scenes/environment/world.tscn"
+config/name="GkProj"
+run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 

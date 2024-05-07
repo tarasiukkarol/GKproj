@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg1q0l3iiuta7"
-path="res://.godot/imported/new idle.png-95a02c097b0ef3581c76d3b700e03bfd.ctex"
+uid="uid://dnln5f3pvhd5"
+path="res://.godot/imported/jmpstr.png-79875f34500fa4bbd354b1dd5d9827e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/entities/player/new idle.png"
-dest_files=["res://.godot/imported/new idle.png-95a02c097b0ef3581c76d3b700e03bfd.ctex"]
+source_file="res://scenes/entities/player/Hero/jmpstr.png"
+dest_files=["res://.godot/imported/jmpstr.png-79875f34500fa4bbd354b1dd5d9827e1.ctex"]
 
 [params]
 
