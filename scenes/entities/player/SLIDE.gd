@@ -1,7 +1,7 @@
 extends "state.gd"
 
 
-@export var climb_speed = 50
+@export var climb_speed = 70
 @export var slide_friction = .7
 
 func update(delta):

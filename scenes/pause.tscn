@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://drul8x7sbxtb2"]
+
+[ext_resource type="Script" path="res://scenes/pause.gd" id="1_h3sv4"]
+[ext_resource type="Shader" path="res://scenes/pause.gdshader" id="2_md8f7"]
+[ext_resource type="PackedScene" uid="uid://crpucmfmyjkhx" path="res://scenes/options.tscn" id="2_vh4dr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bpsr"]
+shader = ExtResource("2_md8f7")
+shader_parameter/amount = 3.0
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h3sv4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5bpsr")
+layout_mode = 0
+offset_left = -780.0
+offset_top = -602.0
+offset_right = -740.0
+offset_bottom = -562.0
+scale = Vector2(71.53, 42.2751)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -322.0
+offset_right = -115.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 0.360784)
+theme_override_font_sizes/font_size = 40
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 20
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 20
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Options"
+
+[node name="Options" parent="MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_vh4dr")]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 20
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit" to="." method="_on_quit_pressed"]
